@@ -17,5 +17,18 @@ jobs:
        - run: echo "hello"
 
 workflows:
+  helm:
+    when: 
+      and: 
+       - equal: ["main", << pipeline.git.branch >> ]
+       - equal: [true, << pipeline.parameters.helm-deploy >>]
+   jobs:
+     - simple-job
+
+  terraform:
+    when: 
+      and: 
+       - equal: ["main", << pipeline.git.branch >> ]
+       - equal: [true, << pipeline.parameters.tf-deploy >>]
    jobs:
      - simple-job
