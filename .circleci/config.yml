@@ -13,7 +13,7 @@ workflows:
                 command: |
                   echo "hello"
           base-revision: main
-          circle_domain: circleci.com
+          circleci_domain: circleci.com
           tag: "ubuntu-2204:2024.05.1"
           # for server, just specify the tag below:
           # tag: "default"
