@@ -1,7 +1,7 @@
 version: 2.1
 setup: true
 orbs:
-  path-filtering: vjpandian/path-filtering-orb@0.0.2
+  path-filtering: vjpandian/path-filtering-orb@0.2.0
 workflows:
   setup-workflow:
     jobs:
