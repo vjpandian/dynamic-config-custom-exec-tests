@@ -5,7 +5,7 @@ orbs:
 workflows:
   setup-workflow:
     jobs:
-      - path-filtering-orb/filter:
+      - path-filtering/filter:
           pre-steps:
             - checkout
             - run:
