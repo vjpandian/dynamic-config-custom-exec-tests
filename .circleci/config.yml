@@ -13,7 +13,7 @@ workflows:
                 command: |
                   echo "hello"
           base-revision: main
-          executor-type: "default-machine"
+          executor-type: "machine"
           config-path: .circleci/continue-config.yml
           mapping: |
             terraform/.* tf-deploy true
