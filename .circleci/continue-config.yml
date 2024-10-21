@@ -1,0 +1,21 @@
+version: 2.1
+
+parameters:
+  helm-deploy:
+    type: boolean
+    default: false
+
+  tf-deploy:
+    type: boolean
+    default: false
+
+jobs:
+  simple-job:
+     docker:
+        - image: cimg/base:stable
+     steps:
+       - run: echo "hello"
+
+workflows:
+   jobs:
+     - simple-job
