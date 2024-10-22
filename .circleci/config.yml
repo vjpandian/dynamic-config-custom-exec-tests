@@ -14,8 +14,8 @@ workflows:
                   echo "hello"
           base-revision: private-auth
           circleci_domain: circleci.com
-          dockerhub-username: ARTIFACTORY_USERNAME
-          dockerhub-password: ARTIFACTORY_PASSWORD
+          dockerhub-username: $ARTIFACTORY_USERNAME
+          dockerhub-password: $ARTIFACTORY_PASSWORD
           registry: "vjpandian1818"
           image: "vjpandian"
           tag: "cimg-python"
