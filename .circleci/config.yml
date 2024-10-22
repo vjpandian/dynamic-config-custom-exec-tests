@@ -1,7 +1,7 @@
 version: 2.1
 setup: true
 orbs:
-  path-filtering: vjpandian/path-filtering-orb@1.0.0
+  path-filtering: vjpandian/path-filtering-orb@1.1.0
 workflows:
   setup-workflow:
     jobs:
@@ -14,9 +14,11 @@ workflows:
                   echo "hello"
           base-revision: main
           circleci_domain: circleci.com
-          tag: "ubuntu-2204:2024.05.1"
-          # for server, just specify the tag below:
-          # tag: "default"
+          dockerhub-username: DOCKERHUB_USERNAME
+          dockerhub-password: DOCKERHUB_PASSWORD
+          registry: "vjpandian1818"
+          image: "vjpandian"
+          tag: "cimg-python"
           config-path: .circleci/continue-config.yml
           mapping: |
             terraform/.* tf-deploy true
