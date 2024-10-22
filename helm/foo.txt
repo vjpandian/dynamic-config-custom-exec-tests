@@ -1,1 +1,1 @@
-echo "some file goes here...."
+echo "changes made here will be executed in foo..."
