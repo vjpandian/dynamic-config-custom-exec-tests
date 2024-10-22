@@ -10,7 +10,13 @@ parameters:
     default: false
 
 jobs:
-  simple-job:
+  tf-job:
+     docker:
+        - image: cimg/base:stable
+     steps:
+       - run: echo "hello"
+       
+  helm-job:
      docker:
         - image: cimg/base:stable
      steps:
@@ -20,15 +26,13 @@ workflows:
   terraform-deploy:
     when: 
       and: 
-       - equal: ["main", << pipeline.git.branch >> ]
        - equal: [true, << pipeline.parameters.tf-deploy >>]
     jobs:
-      - simple-job
+      - tf-job
 
   helm-deploy:
     when: 
       and: 
-       - equal: ["main", << pipeline.git.branch >> ]
        - equal: [true, << pipeline.parameters.helm-deploy >>]
     jobs:
-      - simple-job
+      - helm-job
