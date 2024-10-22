@@ -5,7 +5,7 @@ orbs:
 workflows:
   setup-workflow:
     jobs:
-      - path-filtering/filter:
+      - path-filtering/filter-private-docker-executor:
           pre-steps:
             - checkout
             - run:
