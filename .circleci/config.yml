@@ -14,12 +14,13 @@ workflows:
                   echo "hello"
           base-revision: private-auth
           circleci_domain: circleci.com
-          dockerhub-username: $ARTIFACTORY_USERNAME
+          dockerhub-username: $ARTIFACTORY_USER
           dockerhub-password: $ARTIFACTORY_PASSWORD
           registry: "vjpandian1818"
           image: "vjpandian"
           tag: "cimg-python"
           config-path: .circleci/continue-config.yml
+          context: artifactory-creds
           mapping: |
             terraform/.* tf-deploy true
             helm/.* helm-deploy true
