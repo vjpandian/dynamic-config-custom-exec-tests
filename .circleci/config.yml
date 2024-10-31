@@ -3,7 +3,7 @@ setup: true
 parameters:
   run-continue:
     type: boolean
-    default: false
+    default: true
     description: >
       Continue parameter
 orbs:
