@@ -26,6 +26,7 @@ workflows:
             terraform/.* tf-deploy true
             helm/.* helm-deploy true
   force-workflow:
+    jobs:
       - continuation/continue-private-docker-executor:
           #circleci_domain: circle.ci.adobe.com
           dockerhub-username: $ARTIFACTORY_USER
