@@ -5,8 +5,7 @@ parameters:
     type: boolean
     default: false
     description: >
-      Regardless of files in commit, force rebuild
-      both the nginx and php container builds
+      Continue parameter
 orbs:
   path-filtering: vjpandian/path-filtering-orb@1.1.4
   continuation: vjpandian/continuation@1.1.0
@@ -14,7 +13,7 @@ workflows:
   path-workflow:
     when:
         and:
-          - not: << pipeline.parameters.force >>
+          - not: << pipeline.parameters.run-continue >>
     jobs:
       - path-filtering/filter-private-docker-executor:
           pre-steps:
