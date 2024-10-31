@@ -1,6 +1,10 @@
 version: 2.1
 setup: true
 parameters:
+  registry:
+    type: string
+    default: "vjpandian1818"
+  
   run-continue:
     type: boolean
     default: true
@@ -26,7 +30,7 @@ workflows:
           circleci_domain: circleci.com
           dockerhub-username: $ARTIFACTORY_USER
           dockerhub-password: $ARTIFACTORY_PASSWORD
-          registry: "vjpandian1818"
+          registry: << pipeline.parameters.registry >>
           image: "vjpandian"
           tag: "cimg-python"
           config-path: .circleci/continue-config.yml
