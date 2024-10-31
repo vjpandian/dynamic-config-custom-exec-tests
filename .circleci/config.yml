@@ -1,10 +1,20 @@
 version: 2.1
 setup: true
+parameters:
+  run-continue:
+    type: boolean
+    default: false
+    description: >
+      Regardless of files in commit, force rebuild
+      both the nginx and php container builds
 orbs:
   path-filtering: vjpandian/path-filtering-orb@1.1.4
   continuation: vjpandian/continuation@1.1.0
 workflows:
   path-workflow:
+    when:
+        and:
+          - not: << pipeline.parameters.force >>
     jobs:
       - path-filtering/filter-private-docker-executor:
           pre-steps:
@@ -26,6 +36,7 @@ workflows:
             terraform/.* tf-deploy true
             helm/.* helm-deploy true
   force-workflow:
+    when: << pipeline.parameters.run-continue >>
     jobs:
       - continuation/continue-private-docker-executor:
           #circleci_domain: circle.ci.adobe.com
