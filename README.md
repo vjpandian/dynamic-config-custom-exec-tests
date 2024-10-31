@@ -4,6 +4,11 @@
 
 A sample config.yml that uses a modified versions of the `circleci/path-filtering` and `circleci/continuation` orbs to allow the orbs to be used with private Docker images as executors.
 
+The forked versions of these orbs are:
+
+- [`vjpandian/path-filtering-orb@1.1.4`](https://circleci.com/developer/orbs/orb/vjpandian/path-filtering-orb) 
+- [`vjpandian/continuation@1.1.0`](https://circleci.com/developer/orbs/orb/vjpandian/continuation) 
+
 ## Configuration Parameters
 
 The file includes customizable parameters that control various aspects of the workflows:
