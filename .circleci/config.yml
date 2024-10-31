@@ -4,7 +4,12 @@ parameters:
   registry:
     type: string
     default: "vjpandian1818"
-  
+  image:
+    type: string
+    default: "vjpandian"
+  image-tag:
+    type: string
+    default: "cimg-python"
   run-continue:
     type: boolean
     default: true
@@ -31,8 +36,8 @@ workflows:
           dockerhub-username: $ARTIFACTORY_USER
           dockerhub-password: $ARTIFACTORY_PASSWORD
           registry: << pipeline.parameters.registry >>
-          image: "vjpandian"
-          tag: "cimg-python"
+          image: << pipeline.parameters.image >>
+          tag: << pipeline.parameters.image-tag >>
           config-path: .circleci/continue-config.yml
           context: artifactory-creds
           mapping: |
@@ -45,9 +50,9 @@ workflows:
           #circleci_domain: circle.ci.adobe.com
           dockerhub-username: $ARTIFACTORY_USER
           dockerhub-password: $ARTIFACTORY_PASSWORD
-          registry: "vjpandian1818"
-          image: "vjpandian"
-          tag: "cimg-python"
+          registry: << pipeline.parameters.registry >>
+          image: << pipeline.parameters.image >>
+          tag: << pipeline.parameters.image-tag >>
           circleci_domain: circleci.com
           configuration_path: .circleci/workflows.yml
           parameters: '{ "force": true }'
