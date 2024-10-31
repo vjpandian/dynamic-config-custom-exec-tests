@@ -1,0 +1,30 @@
+version: 2.1
+
+parameters:
+  force:
+    type: boolean
+    default: false
+    description: >
+      Regardless of files in commit, force rebuild
+      both the nginx and php container builds
+
+jobs:
+  docker-test:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - checkout
+      - run: echo << pipeline.parameters.force >>
+
+workflows:
+  force-true:
+    when: << pipeline.parameters.force >>
+    jobs:
+      - docker-test
+
+  force-false:
+    when:
+      and: 
+       - equal: [false, << pipeline.parameters.force >> ]
+    jobs:
+      - docker-test
