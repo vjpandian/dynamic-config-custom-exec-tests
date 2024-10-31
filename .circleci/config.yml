@@ -13,7 +13,7 @@ workflows:
                 name: print some pre-step here
                 command: |
                   echo "hello"
-          base-revision: private-auth
+          base-revision: main
           circleci_domain: circleci.com
           dockerhub-username: $ARTIFACTORY_USER
           dockerhub-password: $ARTIFACTORY_PASSWORD
