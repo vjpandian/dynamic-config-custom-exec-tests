@@ -5,8 +5,7 @@ parameters:
     type: boolean
     default: false
     description: >
-      Regardless of files in commit, force rebuild
-      both the nginx and php container builds
+      Run force
 
 jobs:
   docker-test:
