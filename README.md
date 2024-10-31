@@ -28,11 +28,11 @@ The file includes customizable parameters that control various aspects of the wo
 ## Orbs Used
 
 1. **path-filtering Orb**: `vjpandian/path-filtering-orb@1.1.4`  
-   A fork of the official `circleci/path-filtering` orb.  
+   A [fork](https://circleci.com/developer/orbs/orb/vjpandian/path-filtering-orb) of the official `circleci/path-filtering` orb.  
    **Purpose**: Adds support for private Docker images while maintaining the path filtering functionality.
 
 2. **continuation Orb**: `vjpandian/continuation@1.1.0`  
-   A fork of the official `circleci/continuation` orb.  
+   A [fork](https://circleci.com/developer/orbs/orb/vjpandian/continuation) of the official `circleci/continuation` orb.  
    **Purpose**: Extends the continuation functionality to support private Docker images.
 
 ## Workflows
