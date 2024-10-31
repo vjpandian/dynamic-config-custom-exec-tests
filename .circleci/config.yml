@@ -4,7 +4,7 @@ orbs:
   path-filtering: vjpandian/path-filtering-orb@1.1.4
   continuation: vjpandian/continuation@1.1.0
 workflows:
-  setup-workflow:
+  path-workflow:
     jobs:
       - path-filtering/filter-private-docker-executor:
           pre-steps:
@@ -25,6 +25,7 @@ workflows:
           mapping: |
             terraform/.* tf-deploy true
             helm/.* helm-deploy true
+  force-workflow:
       - continuation/continue-private-docker-executor:
           #circleci_domain: circle.ci.adobe.com
           dockerhub-username: $ARTIFACTORY_USER
